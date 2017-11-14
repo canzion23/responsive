@@ -1,0 +1,17 @@
+{
+  "name": "responsive",
+  "version": "1.0.0",
+  "description": "Inicio de proyecto para aprendizaje de full stack",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "fusionmaps": "^3.12.1",
+    "fusioncharts": "^3.12.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luis Garcia",
+  "license": "ISC"
+}
