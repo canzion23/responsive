@@ -77,7 +77,7 @@
 
         	$arrData["data"] = array();
 
-	// Push the data into the array
+			// Push the data into the array
         	while($row = $cityResult->fetch_array()) {
                 array_push($arrData["data"], array(
               	"label" => $row["Name"],
