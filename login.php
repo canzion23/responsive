@@ -11,11 +11,11 @@
    $dbhandle = new mysqli($hostdb, $userdb, $passdb, $namedb);
 
    /*Render an error message, to avoid abrupt failure, if the database connection parameters are incorrect */
-   if ($dbhandle->connect_error) {
-  	exit("There was an error with your connection: ".$dbhandle->connect_error);
-   }
+if ($dbhandle->connect_error) {
+    exit("There was an error with your connection: ".$dbhandle->connect_error);
+}
 
-   sleep(2);
+   sleep(1);
 
    $strQuery = "SELECT userName, userType FROM tb_usuario
                  WHERE userCod = '".$_POST['username']."'
@@ -24,13 +24,14 @@
 
     $result = $dbhandle->query($strQuery) or exit("Error code ({$dbhandle->errno}): {$dbhandle->error}");
 
-    if ($result->num_rows == 1) {
+if ($result->num_rows == 1) {
     $datos = $result->fetch_assoc();
     echo json_encode(array('error' => false, 'tipo'=> $datos['userType']));
-  } else {
+} else {
     echo json_encode(array('error' => true));
-  }
-  
+}
+
+
   $dbhandle->close();
 
-?>
+?> 
