@@ -1,0 +1,32 @@
+body {
+    background: #333;
+}
+
+section {
+    background: rgba(255, 255, 255, .6);
+    box-sizing: border-box;
+    float: left;
+    font-size: .9em;
+    margin: 1%;
+    padding: 1em;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media (min-width: 360px) {
+    body {
+        background: green;
+    }
+    section {
+        width: 48%;
+    }
+}
+
+#contenedor {
+    background: #fff;
+    height: 100%;
+    margin: 0 auto;
+    width: 80%;
+}

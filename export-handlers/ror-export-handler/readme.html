@@ -1,0 +1,47 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>readme.md</title>
+      </head>
+      <body>
+        <h1 id="fc-exporter-ror">fc-exporter-ror</h1>
+<p>FusionCharts export handler in RubyOnRails</p>
+<ul>
+<li>Requires at least: Ruby 1.9.3p484 (2013-11-22 revision 43786) [i686-linux], Rails 4.2.5</li>
+<li>Tested up to: Ruby 1.9.3p484 (2013-11-22 revision 43786) [i686-linux], Rails 4.2.5</li>
+<li>Version: 2.0</li>
+</ul>
+<p>This program is a controller of RubyOnRails which will export FusionCharts as JPEG, PNG, PDF, and SVG. Following are the installation guide and usage guide of the program.</p>
+<h3 id="installing">Installing</h3>
+<p>  Providing the links of guide to install ruby and RubyOnRails on system first</p>
+<p>  See this official guide to install ruby <a href="https://www.ruby-lang.org/en/documentation/installation/">How to install ruby</a><br>  And here is the link to <a href="http://guides.rubyonrails.org/getting_started.html">Getting Started with RubyOnRails</a></p>
+<p>  Now if your RubyOnRails project is up and ready to be executable you have to do the following steps</p>
+<ol>
+<li>Copy the &quot;fc_exporter_controller.rb&quot; to the <root>/app/controllers directory</li>
+<li>Open the <root>/config/routes.rb file in text editor and add this line &quot;post &#39;fc_exporter/init&#39;&quot; where the routes are defined</li>
+</ol>
+<p>There are <strong><em>2 dependencies</em></strong> of the program, you have to install those gem also</p>
+<ol>
+<li><p>RMagick: <strong>For this don&#39;t use</strong> &quot;gem install rmagick&quot; use the following steps</p>
+<ul>
+<li><p>First, check that the universe repository is enabled by inspecting <strong><em>&#39;/etc/apt/sources.list&#39;</em></strong> with your favourite editor.
+You will need to use sudo to ensure that you have permissions to edit the file.</p>
+</li>
+<li><p>If universe is not included then modify/add the file so that it does.
+<strong><em>deb <a href="http://us.archive.ubuntu.com/ubuntu">http://us.archive.ubuntu.com/ubuntu</a> precise main universe</em></strong></p>
+</li>
+<li><p>After any changes you should run this command to update your system.
+<strong>&quot;sudo apt-get update&quot;</strong>
+You can now install the package like this.
+<strong>&quot;sudo apt-get install librmagick-ruby&quot;</strong></p>
+</li>
+</ul>
+</li>
+<li><p>Json: just use <strong><em>&quot;gem install json&quot;</em></strong> </p>
+</li>
+</ol>
+<h3 id="usage-guide">Usage Guide</h3>
+<p>From a view where the FusionCharts is being displayed you can add the attribute &quot;exportHandler&quot; and the value &quot;<a href="http://localhost">http://localhost</a>:<PORT-NUMBER(eg. 3000)>/fc_exporter/init/&quot; to use the export handler</p>
+
+      </body>
+    </html>

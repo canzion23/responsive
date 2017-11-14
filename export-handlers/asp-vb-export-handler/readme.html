@@ -1,0 +1,68 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>readme.md</title>
+      </head>
+      <body>
+        <h1 id="fusioncharts-asp-net-export-handler-">FusionCharts ASP.NET Export Handler  </h1>
+<h2 id="what-is-fusioncharts-net-export-handler-">What is FusionCharts .NET export handler?</h2>
+<p>FusionCharts Suite XT uses JavaScript to generate charts in the browser, using SVG and VML (for older IE). If you need to export the charts as images or PDF, you need a server-side helper library to convert the SVG to image/PDF. These export handlers allow you to take the SVG from FusionCharts charts and convert to image/PDF.</p>
+<h2 id="how-does-the-export-handler-work-">How does the export handler work?</h2>
+<ul>
+<li>A chart is generated in the browser. When the export to image or PDF button is clicked, the chart generates the SVG string to represent the current state and sends to the export handler. The export handler URL is configured via chart attributes.</li>
+<li>The export handler accepts the SVG string along with chart configuration like chart type, width, height etc., and uses SharpVectors library to convert to image or PDF.</li>
+<li>The export handler either writes the image or PDF to disk, based on the configuration provided by chart, or streams it back to the browser.</li>
+</ul>
+<h2 id="version">Version</h2>
+<p>4.0.1</p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>.NET Framework 3.5 or higher</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<ul>
+<li>Unzip the  <strong>production/asp-net-export-handler.zip</strong>  in your IIS wwwroot folder (e.g. C:\inetpub\wwwroot)</li>
+<li>Add an application in your server and set physical path to the above folder</li>
+<li>Set the URL of <strong>FCExporter.aspx</strong> from the above web application into the chart&#39;s <strong>exportHandler</strong> attribute </li>
+<li>Make sure <strong>IUSR</strong> has proper read/write permission in the <strong>Exported_Images</strong> folder</li>
+<li>FusionCharts&#39; export request contains some XML data, which is restricted in .NET 4 or above. You may need to add the following configuration in your &#39;web.config&#39; file:<pre><code>&lt;system.web&gt;
+  &lt;httpRuntime requestValidationMode=&quot;2.0&quot;/&gt;
+&lt;/system.web&gt;
+</code></pre></li>
+<li>JS error is thrown during svg export if any image, present in same domain, is used in chart. You may need to add the following configuration in your &#39;web.config&#39; file:<pre><code>&lt;system.web&gt;
+  &lt;httpRuntime executionTimeout=&quot;999999&quot; maxRequestLength=&quot;2000000000&quot; requestValidationMode=&quot;2.0&quot; /&gt;
+&lt;/system.web&gt;
+</code></pre></li>
+</ul>
+<h2 id="license">License</h2>
+<p><strong>FUSIONCHARTS:</strong></p>
+<p>Copyright (c) FusionCharts Technologies LLP<br>License Information at <a href="http://www.fusioncharts.com/license">http://www.fusioncharts.com/license</a>  </p>
+<p><strong>SHARPVECTORS:</strong></p>
+<p>The SharpVectors software modified and redistributed herein is covered under the New BSD License (BSD),
+and is subject to the following conditions from that license:</p>
+<p>Copyright (c) 2010, SharpVectorGraphics
+All rights reserved.</p>
+<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the 
+following conditions are met:</p>
+<ul>
+<li><p>Redistributions of source code must retain the above copyright notice, this list of conditions and the 
+following disclaimer.</p>
+</li>
+<li><p>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the 
+following disclaimer in the documentation and/or other materials provided with the distribution.</p>
+</li>
+<li><p>Neither the name of SharpVectorGraphics nor the names of its contributors may be used to endorse or promote
+products derived from this software without specific prior written permission.</p>
+</li>
+</ul>
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES,
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE 
+USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+<p>SharpVectors source code is available from <a href="https://sharpvectors.codeplex.com/">https://sharpvectors.codeplex.com/</a></p>
+
+      </body>
+    </html>
