@@ -3,20 +3,26 @@
 }
 
 body {
-    background: linear-gradient(220deg, purple, rgba(0, 0, 0, .8));
-    min-height: 100vh;
-    font-family: sans-serif;
+    /*background: linear-gradient(220deg, purple, rgba(0, 0, 0, .8));*/
+    background-image: url("../img/bg-9.jpg");
+    background-size: fill;
+    background-repeat: no-repeat;
+    /*min-height: 100vh;*/
+    font-family: sans-serif;    
 }
+
 h1 {
-    margin-top: 3em;
+    /*margin-top: 3em;*/
     text-align: center;
     color: #fff;
 }
-.login-form {
-    width: 50%;
-    background: rgba(255, 255, 255, .2);
-    margin: auto;
+.login-form {    
+    margin: 100px auto;
+    /*background: rgba(142,17,17, .7);*/
+    background: rgba(255,255,255, .2);
+    border-radius: 8px;    
     padding: 2em 1em;
+    width: 50%;
 }
 .login-form__input {
     display: block;
@@ -24,13 +30,15 @@ h1 {
     margin-bottom: 1em;
     border: none;
     line-height: 2.5;
-    padding: 0 1em;   
+    padding: 0 1em;
+    border-radius: 8px;   
 }
 .login-form__submit {
     display: block;
     width: 100%;
     background: teal;
     border: none;
+    border-radius: 8px;
     color: #fff;
     line-height: 2.5;
     text-transform: uppercase;
