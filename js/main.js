@@ -2,7 +2,8 @@ jQuery(document).on('submit', '#formlg', function(event) {
     event.preventDefault();
 
     jQuery.ajax({
-            url: 'login.php',
+            /*url: 'login.php',*/
+            url: 'validarCode.php',
             type: 'POST',
             dataType: 'json',
             data: $(this).serialize(),

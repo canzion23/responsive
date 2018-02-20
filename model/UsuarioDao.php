@@ -5,8 +5,14 @@ include ('entity/Usuario.php');
 
 class UsuarioDao extends Conexion 
 {
+	
 	protected static $cnx;
 
+	/**
+	 * getConexion function
+	 *
+	 * @return void
+	 */
 	private static function getConexion() 
 	{
 		self::$cnx = Conexion::conectar();
@@ -36,23 +42,29 @@ class UsuarioDao extends Conexion
 		//echo $pass;
 		
 		$result->bindParam(':usuario', $user, PDO::PARAM_STR, 15);
-		$result->bindParam(':password', $pass, PDO::PARAM_STR, 15);		
-
-		
+		$result->bindParam(':password', $pass, PDO::PARAM_STR, 15);				
 		
 		$result->execute();
+
+		$userTipo;
 
 		if($result->rowCount() > 0 ) 
 		{
 			$filas = $result->fetch();
 			if ($filas["userCod"] == $user && $filas["userPass"] == $pass) 
 			{
-				return "Existe 1 Usuario";
+				echo json_encode(array('error' => false, 'tipo'=> $filas["userType"]));
+			}
+			else
+			{
+				echo json_encode(array('error' => true));
 			}
 			
 		}
 
 		return "Falso";
+
+		self::desconectar();
 	}
 
 }
