@@ -2,7 +2,7 @@
     /*
         Include the `fusioncharts.php` file that contains functions to embed the charts.
     */
-    include("conn.php");
+    include("includes/helper.php");
 ?>
 
 <!DOCTYPE html>

@@ -3,12 +3,18 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     /*background: linear-gradient(220deg, purple, rgba(0, 0, 0, .8));*/
-    background-image: url("../img/bg-9.jpg");
-    background-size: fill;
+    background-image: url("../img/bg-12.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
     /*min-height: 100vh;*/
-    font-family: sans-serif;    
+    font-family: sans-serif;
 }
 
 h1 {
@@ -16,14 +22,16 @@ h1 {
     text-align: center;
     color: #fff;
 }
-.login-form {    
-    margin: 100px auto;
-    /*background: rgba(142,17,17, .7);*/
-    background: rgba(255,255,255, .2);
-    border-radius: 8px;    
+
+.login-form {
+    /*margin: 100px auto;*/
+    background: rgba(142, 17, 17, .7);
+    /* background: rgba(255, 255, 255, .2); */
+    border-radius: 8px;
     padding: 2em 1em;
     width: 50%;
 }
+
 .login-form__input {
     display: block;
     width: 100%;
@@ -31,8 +39,9 @@ h1 {
     border: none;
     line-height: 2.5;
     padding: 0 1em;
-    border-radius: 8px;   
+    border-radius: 8px;
 }
+
 .login-form__submit {
     display: block;
     width: 100%;
@@ -45,9 +54,11 @@ h1 {
     font-size: 1.1em;
     cursor: pointer;
 }
+
 .login-form__submit:hover {
     background: #005252;
 }
+
 .login-form__forgot {
     text-align: center;
     display: block;
@@ -55,6 +66,8 @@ h1 {
     color: #fff;
     text-decoration: none;
 }
+
+
 /*
 .error {
     display: block;
@@ -66,14 +79,22 @@ h1 {
     line-height: 2.5;
 }
 */
-.error{
+
+.error {
     background-color: #E74F4F;
     position: absolute;
     top: 0;
-    padding: 10px 0 ;
-    border-radius:  0 0 5px 5px;
+    padding: 10px 0;
+    border-radius: 0 0 5px 5px;
     color: #fff;
     width: 100%;
     text-align: center;
     display: none;
+}
+
+.texto3d {
+    font-size: 5em;
+    color: #eee;
+    text-shadow: 1px 1px #333, 1px 1px #333, 2px 2px #333, 3px 3px #333, 4px 4px #333, 5px 5px #333, 6px 6px #333, 7px 7px #333, 8px 8px #333, 9px 9px #333, 10px 10px #333;
+    z-index: -1;
 }
